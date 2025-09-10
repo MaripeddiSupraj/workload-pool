@@ -13,7 +13,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "REPLACE_WITH_YOUR_STATE_BUCKET" # Will be replaced by setup script
+    bucket = "calm-vine-465617-j3-terraform-state" # Will be replaced by setup script
     prefix = "terraform/state"
   }
 }

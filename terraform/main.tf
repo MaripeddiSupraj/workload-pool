@@ -25,22 +25,22 @@ resource "google_storage_bucket" "demo_bucket" {
 
   # Security settings
   uniform_bucket_level_access = true
-  
+
   # Force destroy for demo purposes (not recommended for production)
   force_destroy = true
 
   labels = {
-    environment  = var.environment
-    managed_by   = "terraform"
-    created_by   = "github-actions"
-    project      = "workload-identity-demo"
+    environment = var.environment
+    managed_by  = "terraform"
+    created_by  = "github-actions"
+    project     = "workload-identity-demo"
   }
 }
 
 # Create a sample object in the bucket
 resource "google_storage_bucket_object" "demo_object" {
-  name   = "demo-file.txt"
-  bucket = google_storage_bucket.demo_bucket.name
+  name    = "demo-file.txt"
+  bucket  = google_storage_bucket.demo_bucket.name
   content = <<-EOT
     This file was created by Terraform via GitHub Actions!
     
@@ -201,3 +201,4 @@ provider "kubernetes" {
 
 data "google_client_config" "default" {}
 */
+# Test deployment trigger - Thu Sep 11 00:24:15 IST 2025
